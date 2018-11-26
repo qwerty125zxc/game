@@ -1,0 +1,4 @@
+Avatar: <%= image_tag current_user.userparam.avatar.url(:medium) %><br>
+Nickname: <%= current_user.userparam.nickname %><br />
+Age: <%= current_user.userparam.age %><br />
+<%= link_to "Edit", edit_userparam_path(current_user.id) %><br />

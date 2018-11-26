@@ -1,0 +1,19 @@
+<h1>Game</h1>
+  <% if !user_signed_in? %>
+  <%= link_to "Log in or sign up", new_user_session_path %><br>
+  <% else %>
+  <%= link_to "Add profile info", new_userparam_path %><br>
+  <p><%= link_to "Edit profile info", edit_userparam_path(current_user.id) %>
+  <% end %>
+
+  <% if @users == [] %>
+  No users
+  <% else %>
+  <p>User profiles:</p>
+  <% @users.each do |u| %>
+      Name: <p><%= u.userparam.nickname %><br>
+      Age: <%= u.userparam.age %>
+      Avatar: <%= image_tag u.userparam.avatar.url(:medium) %><br>
+       </p>
+    <% end %>
+<% end %>

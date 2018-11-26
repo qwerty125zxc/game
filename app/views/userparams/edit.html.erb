@@ -1,0 +1,7 @@
+<%= form_for @userparam, url: userparam_path(@userparam.id) do |f| %>
+  Nickname: <%= f.text_field :nickname %><br>
+  Age: <%= f.text_field :age %><br />
+  Avatar: <%= f.file_field :avatar %>
+
+  <%= f.submit "Save changes" %>
+<% end %>
